@@ -1,0 +1,58 @@
+xcrun simctl list
+
+xcrun xctrace list devices
+
+open -a Simulator --args -CurrentDeviceUDID 34578ECD-B41C-45FB-8B35-D7D9A8A37B39
+
+open -a Simulator --args -CurrentDeviceUDID A20C07B0-0CBA-40C7-B4F6-75D1BCD098E4
+
+
+iPhone 15 Pro (34578ECD-B41C-45FB-8B35-D7D9A8A37B39) (Booted)
+iPhone 15 Pro Max (C679F916-2420-4882-933F-C65D86B9FE50) (Shutdown)
+
+Device
+iPhone 15 Pro (34578ECD-B41C-45FB-8B35-D7D9A8A37B39) (Booted)
+iPhone 15 Pro Max (C679F916-2420-4882-933F-C65D86B9FE50) (Shutdown)
+
+get bundleID
+osascript -e 'id of app "/Users/shuai/Downloads/MyRNDemoApp.app"'
+
+
+npm install -g appium-doctor
+npm install -g appium-webdriveragent
+
+~/.nvm/versions/node/v18.8.0/lib/node_modules/appium-webdriveragent
+xcodebuild -project ~/.nvm/versions/node/v18.8.0/lib/node_modules/appium-webdriveragent/WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'id=6F464A5B-FF56-41C8-A5B0-FE28EEDE93BB' test -allowProvisioningUpdates
+
+xcodebuild -project ~/.nvm/versions/node/v18.8.0/lib/node_modules/appium-webdriveragent/WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'id=00008101-000640260E10001E' test -allowProvisioningUpdates
+
+xcodebuild -project ~/.nvm/versions/node/v18.8.0/lib/node_modules/appium-webdriveragent/WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'id=A20C07B0-0CBA-40C7-B4F6-75D1BCD098E4' test -allowProvisioningUpdates
+
+xcodebuild -project /opt/homebrew/Cellar/appium/1.22.3/libexec/lib/node_modules/appium/node_modules/appium-webdriveragent/WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'id=00008101-000640260E10001E' test -allowProvisioningUpdates
+
+
+xcodebuild -project /Users/swang/Desktop/fleet-ios/CarSharing.xcodeproj -scheme CarSharing -destination 'id=6F464A5B-FF56-41C8-A5B0-FE28EEDE93BB' test -allowProvisioningUpdates
+
+xcrun simctl get_app_container booted com.sharing
+
+***********************************************************
+
+# check emulators installed
+emulator -list-avds
+
+Pixel_8_Pro_API_35
+Pixel_8_API_34
+
+
+# start emulator
+/Users/swang/Library/Android/sdk/emulator/emulator -avd Pixel_5_API_31 -netdelay none -netspeed full
+emulator -avd Pixel_8_API_34 -no-snapshot-load
+
+# check list of devices attached
+adb devices
+
+
+
+***********************************************************
+
+npm root -g
