@@ -1,7 +1,3 @@
-Here's an improved and more detailed version of your `README` file, incorporating better organization, explanations, and clarity:
-
----
-
 # Appium2-Cucumber
 
 This project is an automation framework using Appium, Cucumber, and Java. It supports both Android and iOS platforms and follows the Page Object Model (POM) design pattern. The project is configured to run UI automation tests for mobile applications.
