@@ -1,5 +1,4 @@
 @BD-3
-
 Feature: Sign in /sign up
 
   @Android

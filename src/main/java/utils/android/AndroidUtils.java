@@ -30,7 +30,7 @@ public class AndroidUtils extends Utils {
     }
 
     public void quitDriver() {
-        driver.close();
+        driver.quit();
         System.out.println("Quit Android Emulator Driver");
     }
 
@@ -45,7 +45,7 @@ public class AndroidUtils extends Utils {
     }
 
     public void TerminateApp() {
-        driver.terminateApp("");
+        driver.terminateApp("net.spark.bdate.dev");
         System.out.println("Terminate App");
     }
 

@@ -12,8 +12,8 @@ import java.time.Duration;
 import java.util.HashMap;
 
 public class iOSUtils extends Utils {
-    private final IOSDriver driver;
     final int maxTimeout = 10;
+    private final IOSDriver driver;
 
     public iOSUtils(IOSDriver driver) {
         this.driver = driver;
@@ -33,7 +33,6 @@ public class iOSUtils extends Utils {
         getElementByAccessId("Done").click();
     }
 
-    /// return the element find by xpath if it is displayed
     public WebElement getElementByXpath(String xpath) {
         try {
             WebElement element;
@@ -49,24 +48,6 @@ public class iOSUtils extends Utils {
         return null;
     }
 
-    public WebElement getElementByXpath(String xpath, boolean logError) {
-        try {
-            WebElement element;
-            element = driver.findElement(AppiumBy.xpath(xpath));
-            if (element.isDisplayed()) {
-                return element;
-            } else {
-                System.out.println("MobileElement is not found");
-            }
-        } catch (Exception e) {
-            if (logError) {
-                logError("getElementByXpath", e);
-            }
-        }
-        return null;
-    }
-
-    /// return the element find by access id if it is displayed
     public WebElement getElementByAccessId(String id) {
         try {
             WebElement element;
@@ -82,7 +63,6 @@ public class iOSUtils extends Utils {
         return null;
     }
 
-    /// return the element find by iOS Class Chain if it is displayed
     public WebElement getElementByiOSClassChain(String iOSClassChain) {
         try {
             WebElement element;
@@ -108,7 +88,6 @@ public class iOSUtils extends Utils {
         return null;
     }
 
-    /// wait until max time out element is visible find by xpath
     public WebElement waitUntilElementVisibilityByXpath(String locator) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(maxTimeout));
@@ -122,7 +101,6 @@ public class iOSUtils extends Utils {
         return null;
     }
 
-    /// wait until max time out element is visible find by id
     public WebElement waitUntilElementVisibilityByAccessId(String id) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(maxTimeout));
@@ -136,10 +114,9 @@ public class iOSUtils extends Utils {
         return null;
     }
 
-    /// scroll element with nature direction
     public void scrollElement(WebElement element, String direction) {
         try {
-            HashMap<String, Object> scrollObject = new HashMap();
+            HashMap<String, Object> scrollObject = new HashMap<>();
             String elementId = ((RemoteWebElement) element).getId();
             scrollObject.put("elementId", elementId);
             scrollObject.put("direction", direction);

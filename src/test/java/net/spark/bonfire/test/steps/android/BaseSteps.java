@@ -1,13 +1,10 @@
-package net.spark.bonfire.test.steps;
+package net.spark.bonfire.test.steps.android;
 
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.BeforeAll;
-import pages.android.SignInSignUpPage;
 import utils.services.AppiumService;
 
 public class BaseSteps {
-
-    SignInSignUpPage signInSignUpPage;
 
     @BeforeAll
     public static void startAppiumService() {
@@ -15,7 +12,7 @@ public class BaseSteps {
     }
 
     @AfterAll
-    public static void tearDown() {
+    public static void stopAppiumService() {
         AppiumService.stop();
     }
 }

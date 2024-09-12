@@ -52,25 +52,6 @@ public class Utils implements Drivers {
         return faker.internet().password(8, 15, true, true, true);
     }
 
-    public String fakePhoneNumber(int num) {
-        return "33" + faker.number().randomNumber(num, true);
-    }
-
-    public String fakeCreditCardValidUtil() {
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        final SimpleDateFormat yearFormatter = new SimpleDateFormat("yyyy");
-        Integer futureYear = Integer.valueOf(yearFormatter.format(timestamp)) + 3;
-        String randomMonthNUmber = randomNumber(1, 12);
-        randomMonthNUmber = String.format("%2s", randomMonthNUmber).replace(' ', '0');
-        String validMM = randomMonthNUmber;
-        String validYY = String.valueOf(futureYear).substring(2, 4);
-        return validMM + validYY;
-    }
-
-    public String fakeCreditCardSecurityCode() {
-        return randomNumber(111, 999);
-    }
-
     public String logError(String elementName, Exception e) {
         String errorCause = elementName + " ERROR cause is " + e.getCause();
         String errorMsm = elementName + " ERROR reason is " + e.getMessage();

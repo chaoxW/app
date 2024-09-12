@@ -9,18 +9,18 @@ import java.net.MalformedURLException;
 
 import static drivers.Drivers.iOSDriverSetup;
 
-public class IOSSignInSignUpSteps {
+public class SignInSignUpSteps {
 
     SignInSignUpPage signInSignUpPage;
 
-    @Before("@iOS")
+    @Before("@BD-3")
     public void setup() throws MalformedURLException {
         IOSDriver driver = iOSDriverSetup();
         this.signInSignUpPage = new SignInSignUpPage(driver);
     }
 
-    @Given("I click cart button")
-    public void i_click_cart_button() {
+    @Given("I am on sign up sign in screen of a brand")
+    public void i_am_on_sign_up_sign_in_screen_of_a_brand() {
         signInSignUpPage.clickCartButton();
     }
 }

@@ -12,11 +12,11 @@ import java.net.MalformedURLException;
 
 import static drivers.Drivers.androidDriverSetup;
 
-public class AndroidSignInSignUpSteps {
+public class SignInSignUpSteps {
 
     SignInSignUpPage signInSignUpPage;
 
-    @Before("@Android")
+    @Before("@BD-3")
     public void setup() throws MalformedURLException {
         AndroidDriver androidDriver = androidDriverSetup();
         this.signInSignUpPage = new SignInSignUpPage(androidDriver);
